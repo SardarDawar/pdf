@@ -1,0 +1,66 @@
+{% extends 'Base.html' %}
+<p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  {% block content %}
+  <div class="container">
+    
+    {% if form.errors %}
+    {% for field in form %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+      There is error in  {{ field.name }} &nbsp;&nbsp;&nbsp; <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+  <form method="POST">
+      {% csrf_token %}
+      <div class="card" style=" width: auto;">
+        <div class="shadow p-3 bg-white rounded">
+
+            <div class="card-header text-center bg-transparent border-0">
+                <h3>
+                    <p>Informed Consent and Disclosure</p>
+                </h3>
+
+            </div>
+
+
+
+            <div class="card-body">
+  <p>
+    <br>
+  </p>
+  <p>As a client at this outpatient program, you have the right to receive a full explanation of all treatment models employed, and the expected benefits, risks, and time frames for results of each modality. &nbsp;You have the right to choose to receive treatment, to stop treatment at any time, or to seek treatment from another provider outside of this agency, and the staff will provide supports to carry out your decision. As a result of your rights the following disclosure is being made to you: This is a notice of disclosure that the <input type="text" name="note1">. Outpatient Program may periodically engage in the training and supervision of college level and CADC ready interns to provide support services to the program during your enrollment in the program. An intern is a student who is in the process of completing a degree or an area of learning in the field of substance abuse as a prerequisite to graduating from a University, College, or obtaining a credential as a substance abuse counselor. All potential interns must complete a thorough employment application, including a background check, reference verification and a general physical through the <input type="text" name="note2">administration and after which, interns are subject to a second level screening by the clinical supervisor to determine the intern's &nbsp;appropriateness for the program. Consumers are also surveyed fur feedback on the effectiveness of the Intern Program.</p>
+  <p>Your treatment program is scheduled to last approximately 4-6 months with you attending up to 3 days per week depending on the severity of the substance use disorder. For clients on Subutex and Suboxone for opioid maintenance or detoxification the following guideline shall apply: 1. Clients who have abstained from alcohol and illicit drugs for 90 days or more shall attend group therapy once weekly for up to 4 -6 months, 2. Clients who has maintained sobriety for less that 90 days shall attend group therapy &nbsp;twice weekly for up to 4 -6 months, 3. Clients who are actively using illicit drugs and unable to quit will be referred to either IOP or inpatient treatment program with an affiliate agency.&nbsp;</p>
+  <p>
+    <br>
+  </p>
+  <p>It is the intent of the program to provide you with caring and professional services delivered by professionals with experience in addressing SUD with sensitivity to female issues. While in the program, you may expect to benefit from the services delivered, however, due to the nature of such treatment and because of facts beyond the staff persons’ control such benefits cannot be guaranteed. However, regular attendance and high levels of active participation in your treatment will produce maximum benefits. You will be expected to be present at the scheduled times of your treatment and if &nbsp; you are unable to be present, call the office to report that you will either be late or absent. Someone will take your message and forward it to your counselor, should they be unavailable to speak with you directly. Regular attendance and high levels of participation in your treatment will produce maximum benefits. While you are in treatment you maintain your rights as an adult and citizen in the United States and you will be provided with a grievance procedure should you feel that your rights have been violated. If &nbsp; &nbsp; &nbsp;you decide to end the treatment relationship it would be best done in writing with as much advance notice as possible to assure appropriate after care planning, however, you are free to terminate treatment at your will</p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <p>Client Signature: ___________________________________________________ &nbsp; &nbsp; &nbsp; Date: _________________________</p>
+  <p>&nbsp; &nbsp;</p>
+  <p>
+    <br>
+  </p>
+  <p>Witness Signature: ___________________________________________________ &nbsp; &nbsp; &nbsp;Date: ________________________</p>
+  <p>
+    <br>
+  </p>
+  <input type="submit" class="btn btn-primary">
+  <button type="submit" class="btn btn-default"><a href="{% url 'HRRS_RECORD_RELEASE_AUTHORIZATION' %}"> Continue</a></button>
+
+  </div></div></div></div>
+</form>
+</div>
+
+{% endblock %}

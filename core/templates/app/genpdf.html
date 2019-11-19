@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<br><br><br><br><br>
+<center><h1>Generate Pdf</h1></center>
+<center>Congratulations , you have successfully filled all the data required in the forms. You can get the pdf version of it by clicking on 'Generate Pdf' button which can then be downloaded, read or printed easily.</center>
+<center>
+<button type="submit" class="btn btn-primary"><a href="{% url 'GeneratePdf' user.id %}"> Generate Pdf</a></button>
+</center>
+{% endblock %}

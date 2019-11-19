@@ -1,0 +1,225 @@
+{% extends 'Base.html' %}
+<p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  {% block content %}
+  <div class="container">
+    
+    {% if form.errors %}
+    {% for field in form %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+      There is error in  {{ field.name }} &nbsp;&nbsp;&nbsp; <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+  <form method="POST">
+      {% csrf_token %}
+      <div class="card" style=" width: auto;">
+        <div class="shadow p-3 bg-white rounded">
+
+            <div class="card-header text-center bg-transparent border-0">
+                <h3>
+                    <p>Grievance Procedure</p>                </h3>
+
+            </div>
+
+
+
+            <div class="card-body">
+ 
+  <p>PURPOSE: To ensure that all clients are aware of the client’s rights and the procedure for filing a grievance at <input type="text" name="grievance"> the appeals procedure for involuntary discharges.</p>
+  <p>
+    <br>
+  </p>
+  <p>POLICY:&nbsp;</p>
+  <p><input type="text" name="recognizes"> recognizes the right of every individual to voice complaints and concerns regarding services provided and other areas provided by law. Clients shall be provided by the client grievance policy upon admission and have the procedures explained to them as a part of their admission to the program.</p>
+  
+  <p>
+    <br>
+  </p>
+  <p>PROCEDURE:</p>
+  <p>If a client has a grievance, the complaint is first presented to program manage or clinical supervisor. If the client is not satisfied after speaking with the program manager or clinical supervisor, he/she may submit the grievance in writing to the program director.&nbsp;</p>
+  <p>The program director will meet with the client within five (5) working days to address client’s complaints.</p>
+  <p>Resolutions will be documented in writing and given to the client and forwarded to the Chief Executive Director within five days of meeting with the program director. If a client is not satisfied with the program director’s decision, the client may submit an appeal in writing to the Chief Executive Officer within (5) working days from the date of the decision.</p>
+  <p>If the CEO cannot resolve the client issue within 5 working days, the client may file a complaint with any of the following:</p>
+  <p>Complaint Hot Line # 1-877-712-1868</p>
+  <p><strong>Advocacy Organizations:</strong></p>
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="width: 50.0000%;">
+          <p>Division of Mental Health and Addiction Services</p>
+          <p>PO Box 700, Trenton, NJ &nbsp;08625;</p>
+          <p>(609)-984-4813 1-800-382-6717<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span></p>
+          <br>
+        </td>
+        <td style="width: 50.0000%;">
+          <p>Office of MHA</p>
+          <p>Mental Health Administrator</p>
+          <p>125 Fairview Avenue</p>
+          <p>Cedar Grove, NJ &nbsp;07009</p>
+          <p>(973) 228-8172</p>
+          <br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="width: 50.0000%;">
+          <p>Division of Youth and Family (DCPS)</p>
+          <p>Essex County Office</p>
+          <p>153 Halsey St., 3rd Floor</p>
+          <p>Newark, NJ &nbsp;07101</p>
+          <p>(973) 648-4200</p>
+          <p>1-800-392-9532<span style="white-space:pre;">&nbsp;</span></p>
+          <br>
+        </td>
+        <td style="width: 50.0000%;">
+          <p><span style="text-align: inherit; white-space: pre;">&nbsp;</span><span style="text-align: inherit;">Adult Protective Services</span></p>
+          <p>FOCUS, Hispanic Center for Human Development, Inc.</p>
+          <p>441-443 Broad Street</p>
+          <p>Newark, NJ &nbsp;07102</p>
+          <p>(973) 624-2528 ext. 135</p>
+          <p>After Hrs: &nbsp; 911 or local police</p>
+          <br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="width: 50.0000%;">
+          <p>DCPS-Bloomfield District Office</p>
+          <p>650 Bloomfield Ave., 3rd Floor</p>
+          <p>Bloomfield, NJ &nbsp;07003</p>
+          <p>(973) 680-3587</p>
+          <p>1-800392-9536<span style="white-space:pre;">&nbsp;</span></p>
+          <br>
+        </td>
+        <td style="width: 50.0000%;">
+          <p><span style="text-align: inherit;">Child Abuse/Neglect Hotline</span></p>
+          <p>1-877-652-2873</p>
+          <br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p><span style="text-align: inherit; white-space: pre;">&nbsp; &nbsp;</span></p>
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="width: 50.0000%;">
+          <p>DCPS-East Orange District Office</p>
+          <p>240 South Harrison Street</p>
+          <p>East Orange, NJ &nbsp;07018</p>
+          <p>(973) 414-4200</p>
+          <p>1-800-392-2843</p>
+          <br>
+        </td>
+        <td style="width: 50.0000%;">
+          <br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <br>
+  </p>
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="width: 50.0000%;">
+          <p>Disability Rights NJ</p>
+          <p>210 South Broad Street, 3rd Floor</p>
+          <p>Trenton, NJ &nbsp;0868</p>
+          <p>(609) 292-9742</p>
+          <p>1-800-922-7233 (in NJ only)<span style="white-space:pre;">&nbsp;</span></p>
+          <br>
+        </td>
+        <td style="width: 50.0000%;">
+          <p><span style="text-align: inherit; white-space: pre;">&nbsp;&nbsp;</span><span style="text-align: inherit;">Essex County Welfare Agency</span></p>
+          <p>Essex County Department of Citizen Services</p>
+          <p>Division of Welfare</p>
+          <p>18 Rector St., 9th Floor</p>
+          <p>Newark, NJ &nbsp;07102</p>
+          <p>(973) 733-3000</p>
+          <br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p><span style="text-align: inherit; white-space: pre;">&nbsp;</span></p>
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="width: 50.0000%;">
+          <p>Division of Health Facilities Evaluation and Licensing</p>
+          <p>New Jersey State Department of Health</p>
+          <p>P O Box 367</p>
+          <p>Trenton, NJ 08625-0367</p>
+          <p>609-792-9770</p>
+          <br>
+        </td>
+        <td style="width: 50.0000%;">
+          <p><span style="text-align: inherit; white-space: pre;">&nbsp; &nbsp;&nbsp;</span><span style="text-align: inherit;">State of New Jersey</span></p>
+          <p>Office of the Ombudsman for the Institutionalized Elderly</p>
+          <p>PO Box 808</p>
+          <p>Trenton, NJ 08625-0808</p>
+          <p>609-624-4262</p>
+          <br>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    <br>
+  </p>
+  <p>You will be provided a copy of this form during your admission process. It will be reviewed with you again during &nbsp; your Orientation.&nbsp;</p>
+  <p>
+    <br>
+  </p>
+  <p>Client Signature: _______________________________________ &nbsp; &nbsp; &nbsp; Date: ______________________</p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <p>Witness Signature: ______________________________________ &nbsp; &nbsp; Date: ______________________</p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <input type="submit" class="btn btn-primary">
+  <button type="submit" class="btn btn-default"><a href="{% url 'Rights_of_Each_Client_or_Bill_of_Rights' %}"> Continue</a></button>
+
+  </div></div></div></div>
+</form>
+</div>
+
+{% endblock %}

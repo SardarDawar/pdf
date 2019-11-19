@@ -1,0 +1,13 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'music/css/StyleSheet3.css' %}">
+    <br>
+    <br>
+    <br>
+    <br>  
+    <button class='btn btn-success'><a href="{% url 'HRRS_INTAKE_SCREEN' %}">Fill the Survey</a></button>
+    <button class='btn btn-success'><a href="{% url 'GeneratePdf' user.id %}">Retrieve Filled Data</a></button>
+    
+{% endblock content %}

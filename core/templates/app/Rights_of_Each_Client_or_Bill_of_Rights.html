@@ -1,0 +1,94 @@
+{% extends 'Base.html' %}
+
+  {% block content %}
+  <div class="container">
+    
+    {% if form.errors %}
+    {% for field in form %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+      There is error in  {{ field.name }} &nbsp;&nbsp;&nbsp; <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+  <form method="POST">
+      {% csrf_token %}
+      <div class="card" style=" width: auto;">
+        <div class="shadow p-3 bg-white rounded">
+
+            <div class="card-header text-center bg-transparent border-0">
+                <h3>
+                    <p>Rights of Each Client/Bill of Rights</p>
+
+            </div>
+
+
+
+            <div class="card-body">
+ 
+  <p>Purpose: &nbsp;To ensure that all clients or their legal guardians are informed of the clients’ rights</p>
+  <p>Policy: &nbsp; It is the policy of <input type="text" name="policy"> that all clients or their legal guardian be informed of their rights as a client of <input type="text" name="client">, which will be evidenced by the client’s written acknowledgement or documentation in the clients file by the counselor.&nbsp;</p>
+  <p>PROCEDURE:</p>
+  <p><input type="text" name="procedure"> shall inform the clients of the following rights:&nbsp;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span> The right to be informed of these rights, as evidenced by the client's written acknowledgment or by documentation by staff in the clinical record that the client was offered a written copy of these rights and given a written or verbal explanation of these rights in terms the client could understand;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to be notified of any rules and policies the program has established governing client conduct in the facility;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to be informed of services available in the program, the names and professional status of the staff providing and/or responsible for the client's care, and fees and related charges, including the payment, fee, deposit, and refund policy of the program and any charges for services not covered by sources of third-party payment or the program's basic rate;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to be informed if the program has authorized other health care and educational institutions to participate in his or her treatment, the identity and function of these institutions, and to refuse to allow their participation in his or her treatment;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to receive from his or her physicians or clinical practitioner(s) an explanation of his or her complete medical/health condition or diagnosis, recommended treatment, treatment options, including the option of no treatment, risks(s) of treatment, and expected result(s), in terms that he or she understands;</p>
+  <p>i. If, in the opinion of the medical director or director of substance abuse counseling, this information would be detrimental to the client's health, or if the client is not capable of understanding the information, the explanation shall be provided to a family member, legal guardian or significant other, as available;</p>
+  <p>ii. Release of information to a family member, legal guardian or significant other, along with the reason for not informing the client directly, shall be documented in the client's clinical record; and</p>
+  <p>iii. All consents to release information shall be signed by client or their parent, guardian or legally authorized representative;</p>
+  <p>
+    <br>
+  </p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to participate in the planning of his or her care and treatment, and to refuse medication and treatment;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>A client's refusal of medication or treatment shall be documented in the client's clinical record;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to participate in experimental research only when the client gives informed, written consent to such participation, or when a guardian or legally authorized representative gives such consent for an incompetent client in accordance with law, rule and regulation;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to voice grievances or recommend changes in policies and services to program staff, the governing authority, and/or outside representatives of his or her choice either individually or as group, free from restraint, interference, coercion, discrimination, or reprisal;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to be free from mental and physical abuse, exploitation, and from use of restraints;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>A client's ordered medications shall not be withheld for failure to comply with facility rules or procedures, unless the decision is made to terminate the client in accordance with this chapter; medications may only be withheld when the facility medical staff determines that such action is medically indicated;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to confidential treatment of information about the client;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>Information in the client's clinical record shall not be released to anyone outside the program without the client's written approval to release the information in accordance with Federal statutes and rules for the Confidentiality of Alcohol and Drug Abuse Client Records at 42 U.S.C. §§290dd-2, and 290ee-2, and 42 CFR Part 2 §§2.1 et seq., and the provisions of the Health Insurance Portability and Accountability Act (HIPAA) at 45 CFR Parts 160 and 164, unless the release of the information is required and permitted by law, a third-party payment contract, a peer review, or the information is needed by DAS for statutorily authorized purposes; and</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The program may release data about the client for studies containing aggregated statistics only when the client's identity is protected and masked;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to be treated with courtesy, consideration, respect, and with recognition of his or her dignity, individuality, and right to privacy, including, but not limited to, auditory and visual privacy;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The client's privacy also shall be respected when program staff are discussing the client with others;</p>
+  <p>
+    <br>
+  </p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to exercise civil and religious liberties, including the right to independent personal decisions;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>No religious beliefs or practices, or any attendance at religious services, shall be imposed upon any client;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to not be discriminated against because of age, race, religion, sex, nationality, sexual orientation, disability (including, but not limited to, blind, deaf, hard of hearing), or ability to pay; or to be deprived of any constitutional, civil, and/or legal rights.</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>Programs shall not discriminate against clients taking medications as prescribed;</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to be transferred or discharged only for medical reasons, for the client's welfare, that of other clients or staff upon the written order of a physician or other licensed clinician, or for failure to pay required fees as agreed at time of admission (except as prohibited by sources of third-party payment);</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>Transfers and discharges, and the reasons therefore, shall be documented in the client's clinical record; and</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>If a transfer or discharge on a non-emergency basis is planned by the outpatient substance abuse treatment program, the client and his or her family shall be given at least 10 days advance notice of such transfer or discharge, except as otherwise provided for in &nbsp;N.J.A.C. 10:161B-6.4(c);</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to be notified in writing, and to have the opportunity to appeal, an involuntary discharge; and</p>
+  <p>⦁<span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>The right to have access to and obtain a copy of his or her clinical record, in accordance with the program's policies and procedures and applicable Federal and State laws and rules.</p>
+  <p>
+    <br>
+  </p>
+  <p>________________________________________________________________________________________</p>
+  <p>Client Signature &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Date</p>
+  <p>
+    <br>
+  </p>
+  <p>________________________________________________________________________________________</p>
+  <p>Witness Signature &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Date</p>
+  <p>
+    <br>
+  </p>
+  <p>&nbsp;</p>
+  <p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span></p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+<input type="submit" class="btn btn-primary">
+<button type="submit" class="btn btn-default"><a href="{% url 'conf' %}"> Continue</a></button>
+
+  </div></div></div></form></div>
+
+  {% endblock %}

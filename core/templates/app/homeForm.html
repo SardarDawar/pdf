@@ -1,0 +1,682 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'forms_app/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'forms_app/css/bootstrap-datepicker.min.css' %}">
+
+    <title>Django Forms</title>
+</head>
+
+<body>
+    <div class="mx-auto mt-5 mb-5" style="width: 800px;">
+
+
+
+
+        <form action="." method="POST">
+            {% csrf_token %}
+            <div class="card" style="width: 55rem;">
+                <div class="card-header bg-primary text-white text-center ">
+                    Agency Name
+                </div>
+                <div class="shadow p-3 bg-white rounded">
+                    <div class="card-header p-1 bg-white border border-dark">
+                        <div class="card-header p-1 bg-white border border-dark">
+                            <div class="card-header bg-white text-center border border-dark">
+                                <h2><u><strong>Chart Review Tool</strong></u></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body p-0 mt-5">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+
+                                    <td scope="row">Client Name:
+                                        <input type="text" class="form-control" name="clientName">
+                                    </td>
+                                    <td colspan="2">
+                                        Level Of Care
+                                        &nbsp; &nbsp;
+                                        &nbsp; &nbsp;
+                                        Level 1
+                                        <input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="level_1">
+                                        &nbsp; &nbsp;
+                                        Level 2
+                                        <input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="level_2">
+                                    </td>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row" rowspan="2">
+                                        Admit Date :
+                                        <input data-provide="datepicker" data-date-format="yyyy-mm-dd" name="admitDate"
+                                            class="form-control" autocomplete="off">
+
+                                        <br>
+                                        <br>
+                                        Open Chart
+                                        <input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="openChart_1">
+                                        &nbsp; &nbsp;
+                                        Open Chart
+                                        <input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="openChart_2">
+                                    </td>
+
+                                    <td scope="row" rowspan="2">Date Of Review: <input data-provide="datepicker"
+                                            data-date-format="yyyy-mm-dd" name="reviewDate" class="form-control"
+                                            autocomplete="off"></td>
+                                    <td scope="row" rowspan="2">Reviewed By : <input type="text" class="form-control"
+                                            name="reviewedBy"></td>
+                                </tr>
+                                <tr></tr>
+                            </tbody>
+                        </table>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td scope="col">
+                                        1<sup>st</sup> &nbsp;
+                                        2<sup>nd</sup> &nbsp;
+                                        3<sup>rd</sup> &nbsp;
+                                        <b>Review</b>
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    </td>
+                                    <td colspan="3">
+                                        Date :
+                                        <u>
+                                            <input data-provide="datepicker" data-date-format="yyyy-mm-dd"
+                                                name="stampDate" class="form-control" autocomplete="off">
+
+                                        </u>
+                                    </td>
+                                    <td scope="col">
+                                        Comments
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="bg-secondary border border-dark""><b>Section 1. Intake</b></th>
+                                <td class=" bg-secondary text-center border border-dark""><b>Complete</b></td>
+                                    <td class="bg-secondary text-center border border-dark""><b>Not Complete</b></td>
+                                <td class=" bg-secondary text-center border border-dark""><b>N/A</b></td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                
+                              </tr>
+                              <tr>
+                                <td scope=" row">Screeing/Intake form</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="screening_or_intake_form_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="screening_or_intake_form_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="screening_or_intake_form_none"> </td>
+                                    <td> <textarea name="screening_or_intake_form_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Informed Consemt and Disclosure</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="informed_consent_and_disclosure_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="informed_consent_and_disclosure_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="informed_consent_and_disclosure_none"> </td>
+                                    <td> <textarea name="informed_consent_and_disclosure_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Statement of Confidentiality</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="statement_of_confidentiality_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="statement_of_confidentiality_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="statement_of_confidentiality_none"> </td>
+                                    <td> <textarea name="statement_of_confidentiality_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Bill of Rights</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="bill_of_rights_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="bill_of_rights_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="bill_of_rights_none"> </td>
+                                    <td> <textarea name="bill_of_rights_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Grivance Procedure</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="grievance_procedure_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="grievance_procedure_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="grievance_procedure_none"> </td>
+                                    <td> <textarea name="grievance_procedure_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Program Rules</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="program_rules_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="program_rules_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="program_rules_none"> </td>
+                                    <td> <textarea name="program_rules_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Release - Confidentiality Information &nbsp; &nbsp; <b>(42 CFR)</b>
+                                    </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="release_confidentiality_information_42_cfr_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="release_confidentiality_information_42_cfr_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="release_confidentiality_information_42_cfr_none"> </td>
+                                    <td> <textarea name="release_confidentiality_information_42_cfr_comment" cols="40"
+                                            rows="5" class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Signature Page</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="signature_page_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="signature_page_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="signature_page_none"> </td>
+                                    <td> <textarea name="signature_page_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Program Schedule (signed copy)</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="programe_schedule_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="programe_schedule_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="programe_schedule_none"> </td>
+                                    <td> <textarea name="programe_schedule_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+
+
+                                <tr>
+                                    <th scope="row" class="bg-secondary border border-dark""><b>Section 2. Assessments</b></th>
+                                    <td class=" bg-secondary text-center border border-dark"">
+                                        </td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                    <td class=" bg-secondary text-center border border-dark""></td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td scope=" row">Bio-Psychosocial Assessment</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="bioPsycolosocialAssessment_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="bioPsycolosocialAssessment_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="bioPsycolosocialAssessment_none"> </td>
+                                    <td> <textarea name="bioPsycolosocialAssessment_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">NJSAMS/ASI </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="NJSAMS_ASI_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="NJSAMS_ASI_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="NJSAMS_ASI_none"> </td>
+                                    <td> <textarea name="NJSAMS_ASI_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">SOGS</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="sogs_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="sogs_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="sogs_none"> </td>
+                                    <td> <textarea name="sogs_commeent" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">DAST</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="dast_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="dast_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="dast_none"> </td>
+                                    <td> <textarea name="dast_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">MAST</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="MAST_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="MAST_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="MAST_none"> </td>
+                                    <td> <textarea name="MAST_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Psychiatric Evaluation (if applicable)</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Psychiatric_Evaluation_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Psychiatric_Evaluation_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Psychiatric_Evaluation_none"> </td>
+                                    <td> <textarea name="Psychiatric_Evaluation_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+
+
+
+
+
+
+                                <tr>
+                                    <th scope="row" class="bg-secondary border border-dark""><b>Section 3. Progress Note</b></th>
+                                        <td class=" bg-secondary text-center border border-dark"">
+                                        </td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                        <td class=" bg-secondary text-center border border-dark""></td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td scope=" row">Initial Treatment Plan</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Initial_Treatment_Plan_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Initial_Treatment_Plan_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Initial_Treatment_Plan_none"> </td>
+                                    <td> <textarea name="Initial_Treatment_Plan_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Updated Treatment Plan </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Updated_Treatment_Plan_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Updated_Treatment_Plan_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Updated_Treatment_Plan_none"> </td>
+                                    <td> <textarea name="Updated_Treatment_Plan_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Discharge Summary</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Discharge_Summary_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Discharge_Summary_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Discharge_Summary_none"> </td>
+                                    <td> <textarea name="Discharge_Summary_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Individual/Group Progress Notes</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Individual_Group_Progress_Notes_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Individual_Group_Progress_Notes_none"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="sogs_none"> </td>
+                                    <td> <textarea name="Individual_Group_Progress_Notes_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Individual/Group Attendance Sheet</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Individual_Group_Attendance_Sheet_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Individual_Group_Attendance_Sheet_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Individual_Group_Attendance_Sheet_none"> </td>
+                                    <td> <textarea name="Individual_Group_Attendance_Sheet_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+
+
+
+
+
+                                <tr>
+                                    <th scope="row" class="bg-secondary border border-dark""><b>Section 4. Medical Information</b></th>
+                                            <td class=" bg-secondary text-center border border-dark"">
+                                        </td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                            <td class=" bg-secondary text-center border border-dark""></td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td scope=" row">HIV Counseling Form</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="HIV_Counseling_Form_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="HIV_Counseling_Form_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="HIV_Counseling_Form_none"> </td>
+                                    <td> <textarea name="HIV_Counseling_Form_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">TB Testing Form </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="TB_Testing_Form_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="TB_Testing_Form_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="TB_Testing_Form_none"> </td>
+                                    <td> <textarea name="TB_Testing_Form_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Medication (If applicable)</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Medication_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Medication_no_complete"> </td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                            name="Medication_none"> </td>
+                                    <td> <textarea name="Medication_comment" cols="40" rows="5"
+                                            class="form-control border border-white" draggable="false"
+                                            style="resize: none;"></textarea></td>
+                                </tr>
+
+
+
+
+                                <tr>
+                                    <th scope="row" class="bg-secondary border border-dark""><b>Section 5. Lab Results</b></th>
+                                            <td class=" bg-secondary text-center border border-dark"">
+                                        </td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                            <td class=" bg-secondary text-center border border-dark""></td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td scope=" row">Urine Drug Screening</td>
+                                            <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Urine_Drug_Screening_complete"> </td>
+                                        <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Urine_Drug_Screening_no_complete"> </td>
+                                        <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Urine_Drug_Screening_none"> </td>
+                                        <td> <textarea name="Urine_Drug_Screening_comment" cols="40" rows="5"
+                                                class="form-control border border-white" draggable="false"
+                                                style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Other</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_complete_5"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_no_complete_5"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_none_5"> </td>
+                                <td> <textarea name="Other_comment_5" cols="40" rows="5"
+                                        class="form-control border border-white" draggable="false"
+                                        style="resize: none;"></textarea></td>
+                                </tr>
+
+
+
+
+
+
+                                <tr>
+                                    <th scope="row" class="bg-secondary border border-dark""><b>Section 6. Correspondents (In/Out)</b></th>
+                                            <td class=" bg-secondary text-center border border-dark"">
+                                        </td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                            <td class=" bg-secondary text-center border border-dark""></td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td scope=" row">Drug Court reports, SAI, IDRC/DUII</td>
+                                            <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Drug_Court_reports_SAI_IDRC_DUII_complete"> </td>
+                                        <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Drug_Court_reports_SAI_IDRC_DUII_no_complete"> </td>
+                                        <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Drug_Court_reports_SAI_IDRC_DUII_none"> </td>
+                                        <td> <textarea name="Drug_Court_reports_SAI_IDRC_DUII_comment" cols="40" rows="5"
+                                                class="form-control border border-white" draggable="false"
+                                                style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Probation, Parole, ISP, DFSetc...</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Probation_Parole_ISP_DFSetc_complete"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Probation_Parole_ISP_DFSetc_no_complete"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Probation_Parole_ISP_DFSetc_none"> </td>
+                                <td> <textarea name="Probation_Parole_ISP_DFSetc_comment" cols="40" rows="5"
+                                        class="form-control border border-white" draggable="false"
+                                        style="resize: none;"></textarea></td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <th scope="row" class="bg-secondary border border-dark""><b>Section 7. Administrative Documentation</b></th>
+                                            <td class=" bg-secondary text-center border border-dark"">
+                                        </td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                            <td class=" bg-secondary text-center border border-dark""></td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td scope=" row">Audit Forms</td>
+                                            <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Audit_Forms_complete"> </td>
+                                        <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Audit_Forms_no_complete"> </td>
+                                        <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                name="Audit_Forms_none"> </td>
+                                        <td> <textarea name="Audit_Forms_comment" cols="40" rows="5"
+                                                class="form-control border border-white" draggable="false"
+                                                style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Supervision Notes</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Supervision_Notes_complete"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Supervision_Notes_no_complete"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Supervision_Notes_none"> </td>
+                                <td> <textarea name="Supervision_Notes_comment" cols="40" rows="5"
+                                        class="form-control border border-white" draggable="false"
+                                        style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Other</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_complete_7"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_no_complete_7"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_none_7"> </td>
+                                <td> <textarea name="Other_comment_7" cols="40" rows="5"
+                                        class="form-control border border-white" draggable="false"
+                                        style="resize: none;"></textarea></td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <th scope="row" class="bg-secondary border border-dark""><b>Section 8. Quality Assurance</b></th>
+                                                    <td class=" bg-secondary text-center border border-dark"">
+                                        </td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                                    <td class=" bg-secondary text-center border border-dark""></td>
+                                    <td class="bg-secondary text-center border border-dark""></td>
+                                                    
+                                                  </tr>
+                                                  <tr>
+                                                    <td scope=" row">Client Survey (30, 60+90 days)</td>
+                                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                        name="Client_Survey_complete"> </td>
+                                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                        name="Client_Survey_no_complete"> </td>
+                                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                                        name="Client_Survey_none"> </td>
+                                                <td> <textarea name="Client_Survey_comment" cols="40" rows="5"
+                                                        class="form-control border border-white" draggable="false"
+                                                        style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">QA Statistics</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="QA_Statistics_complete"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="QA_Statistics_no_complete"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="QA_Statistics_none"> </td>
+                                <td> <textarea name="QA_Statistics_comment" cols="40" rows="5"
+                                        class="form-control border border-white" draggable="false"
+                                        style="resize: none;"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Other</td>
+                                    <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_complete_8"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_no_complete_8"> </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        name="Other_none_8"> </td>
+                                <td> <textarea name="Other_comment_8" cols="40" rows="5"
+                                        class="form-control border border-white" draggable="false"
+                                        style="resize: none;"></textarea></td>
+                                </tr>
+
+
+
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Submit">
+
+
+                
+            </div>
+            
+
+        </form>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="{% static 'forms_app/js/bootstrap-datepicker.js' %}">
+    </script>
+
+
+    <script src="{% static 'forms_app/js/bootstrap-datepicker.min.js' %}">
+    </script>
+</body>
+
+</html>

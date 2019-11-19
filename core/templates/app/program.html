@@ -1,0 +1,80 @@
+{% extends 'Base.html' %}
+
+  {% block content %}
+  <div class="container">
+    
+    {% if form.errors %}
+    {% for field in form %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+      There is error in  {{ field.name }} &nbsp;&nbsp;&nbsp; <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+  <form method="POST">
+      {% csrf_token %}
+      <div class="card" style=" width: auto;">
+        <div class="shadow p-3 bg-white rounded">
+
+            <div class="card-header text-center bg-transparent border-0">
+                <h3>
+                    <p>PROGRAM SCHEDULE</p>
+
+            </div>
+
+
+
+            <div class="card-body">
+      <p>Screenings&nbsp;</p>
+      <p>By phone or walk-in, no appointment necessary. Monday- Friday <input type="text" name="date1"></p>
+      <p>
+        <br>
+      </p>
+      <p>Assessments&nbsp;</p>
+      <p>By appointment only: Monday- Friday <input type="text" name="date2">.</p>
+      <p>
+        <br>
+      </p>
+      <p>
+        <br>
+      </p>
+      <p>Out Patient -ASAM Level I</p>
+      <p>Clinical substance use disorder individual counseling and psycho-education (didactic) sessions services shall be provided for less than 9 hours per week:</p>
+      <p>
+        <br>
+      </p>
+      <p>Individual Counseling: <span style="white-space:pre;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>&nbsp; Fridays (from 5am to 7pm)</p>
+      <p>
+        <br>
+      </p>
+      <p>
+        <br>
+      </p>
+      <p>
+        <br>
+      </p>
+      <p>
+        <br>
+      </p>
+      <p>
+        <br>
+      </p>
+      <p>Client Signature: ___________________________________ Date: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;__________________</p>
+      <p>
+        <br>
+      </p>
+      <p>
+        <br>
+      </p>
+      <p>Witness Signature: ___________________________________ Date: &nbsp; &nbsp; &nbsp; __________________</p>
+      <p>
+        <br>
+      </p>
+      <p>
+        <br>
+      </p> <input type="submit" class="btn btn-primary">
+      <button type="submit" class="btn btn-default"><a href="{% url 'program_rules' %}"> Continue</a></button>
+
+    </div></div></div></form></div>
+    {% endblock %}

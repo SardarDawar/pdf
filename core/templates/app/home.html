@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Django Forms</title>
+</head>
+
+<body>
+    <div class="mx-auto mt-5 mb-5" style="width: 800px;">
+
+
+
+
+
+
+        <div class="card" style="width: 55rem;">
+            <div class="card-header bg-primary text-white text-center ">
+                Agency Name
+            </div>
+            <div class="shadow p-3 bg-white rounded">
+                <div class="card-header p-1 bg-white border border-dark">
+                    <div class="card-header p-1 bg-white border border-dark">
+                        <div class="card-header bg-white text-center border border-dark">
+                            <h2><u><strong>Chart Review Tool</strong></u></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body p-0 mt-5">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+
+                                <td scope="row">Client Name: {{ new_chart.clientName }}</td>
+                                <td colspan="2">
+                                    Level Of Care
+                                    &nbsp; &nbsp;
+                                    &nbsp; &nbsp;
+                                    Level 1
+                                    <input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.level_1 %} checked {% endif %} disabled>
+                                    &nbsp; &nbsp;
+                                    Level 2
+                                    <input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.level_2 %} checked {% endif %} disabled>
+                                </td>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row" rowspan="2">
+                                    Admit Date : {% if new_chart.admitDate %}{{ new_chart.admitDate }} {% endif %}
+                                    <br>
+                                    <br>
+                                    Open Chart
+                                    <input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.openChart_1 %} checked {% endif %} disabled>
+                                    &nbsp; &nbsp;
+                                    Open Chart
+                                    <input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.openChart_2 %} checked {% endif %} disabled>
+                                </td>
+
+                                <td scope="row" rowspan="2">Date Of Review: {% if new_chart.reviewDate %}
+                                    {{ new_chart.reviewDate }} {% endif %} </td>
+                                <td scope="row" rowspan="2">Reviewed By : {{ new_chart.reviewedBy }} </td>
+                            </tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td scope="col">
+                                    1<sup>st</sup> &nbsp;
+                                    2<sup>nd</sup> &nbsp;
+                                    3<sup>rd</sup> &nbsp;
+                                    <b>Review</b>
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                </td>
+                                <td colspan="3">
+                                    Date :
+                                    <u>
+                                        {% if new_chart.stampDate %}{{ new_chart.stampDate }}
+
+                                        {% else %}
+
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        &nbsp; &nbsp; &nbsp; &nbsp;
+                                        {% endif %}
+                                    </u>
+                                </td>
+                                <td scope="col">
+                                    Comments
+
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                    &nbsp; &nbsp; &nbsp; &nbsp;
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="bg-secondary border border-dark""><b>Section 1. Intake</b></th>
+                                <td class=" bg-secondary text-center border border-dark""><b>Complete</b></td>
+                                <td class="bg-secondary text-center border border-dark""><b>Not Complete</b></td>
+                                <td class=" bg-secondary text-center border border-dark""><b>N/A</b></td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                
+                              </tr>
+                              <tr>
+                                <td scope=" row">Screeing/Intake form</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.screening_or_intake_form_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.screening_or_intake_form_no_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.screening_or_intake_form_none %} checked {% endif %} disabled>
+                                </td>
+                                <td class="text-wrap">{{ new_chart.screening_or_intake_form_comment  }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Informed Consemt and Disclosure</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.informed_consent_and_disclosure_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.informed_consent_and_disclosure_no_complete %} checked
+                                        {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.informed_consent_and_disclosure_none %} checked {% endif %}
+                                        disabled></td>
+                                <td class="text-wrap">{{ new_chart.informed_consent_and_disclosure_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Statement of Confidentiality</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.statement_of_confidentiality_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.statement_of_confidentiality_no_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.statement_of_confidentiality_none %} checked {% endif %}
+                                        disabled></td>
+                                <td class="text-wrap">{{ new_chart.statement_of_confidentiality_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Bill of Rights</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.bill_of_rights_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.bill_of_rights_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.bill_of_rights_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.bill_of_rights_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Grivance Procedure</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.grievance_procedure_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.grievance_procedure_no_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.grievance_procedure_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.grievance_procedure_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Program Rules</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.program_rules_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.program_rules_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.program_rules_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.program_rules_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Release - Confidentiality Information &nbsp; &nbsp; <b>(42 CFR)</b></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.release_confidentiality_information_42_cfr_complete %} checked
+                                        {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.release_confidentiality_information_42_cfr_no_complete %}
+                                        checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.release_confidentiality_information_42_cfr_none %} checked
+                                        {% endif %} disabled></td>
+                                <td class="text-wrap">
+                                    {{ new_chart.release_confidentiality_information_42_cfr_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Signature Page</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.signature_page_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.signature_page_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.signature_page_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.signature_page_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Program Schedule (signed copy)</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.programe_schedule_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.programe_schedule_no_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.programe_schedule_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.programe_schedule_comment }}</td>
+                            </tr>
+
+
+                            <tr>
+                                <th scope="row" class="bg-secondary border border-dark""><b>Section 2. Assessments</b></th>
+                                    <td class=" bg-secondary text-center border border-dark"">
+                                    </td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                    <td class=" bg-secondary text-center border border-dark""></td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td scope=" row">Bio-Psychosocial Assessment</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.bioPsycolosocialAssessment_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.bioPsycolosocialAssessment_no_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.bioPsycolosocialAssessment_none %} checked {% endif %} disabled>
+                                </td>
+                                <td class="text-wrap">{{ new_chart.bioPsycolosocialAssessment_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">NJSAMS/ASI </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.NJSAMS_ASI_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.NJSAMS_ASI_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.NJSAMS_ASI_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.NJSAMS_ASI_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">SOGS</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.sogs_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.sogs_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.sogs_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.sogs_commeent }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">DAST</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.dast_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.dast_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.dast_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.dast_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">MAST</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.MAST_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.MAST_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.MAST_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.MAST_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Psychiatric Evaluation (if applicable)</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Psychiatric_Evaluation_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Psychiatric_Evaluation_no_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Psychiatric_Evaluation_none %} checked {% endif %} disabled>
+                                </td>
+                                <td class="text-wrap">{{ new_chart.Psychiatric_Evaluation_comment }}</td>
+                            </tr>
+
+
+
+
+
+
+                            <tr>
+                                <th scope="row" class="bg-secondary border border-dark""><b>Section 3. Progress Note</b></th>
+                                        <td class=" bg-secondary text-center border border-dark"">
+                                    </td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                        <td class=" bg-secondary text-center border border-dark""></td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <td scope=" row">Initial Treatment Plan</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Initial_Treatment_Plan_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Initial_Treatment_Plan_no_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Initial_Treatment_Plan_none %} checked {% endif %} disabled>
+                                </td>
+                                <td class="text-wrap">{{ new_chart.Initial_Treatment_Plan_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Updated Treatment Plan </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Updated_Treatment_Plan_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Updated_Treatment_Plan_no_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Updated_Treatment_Plan_none %} checked {% endif %} disabled>
+                                </td>
+                                <td class="text-wrap">{{ new_chart.Updated_Treatment_Plan_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Discharge Summary</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Discharge_Summary_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Discharge_Summary_no_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Discharge_Summary_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Discharge_Summary_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Individual/Group Progress Notes</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Individual_Group_Progress_Notes_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Individual_Group_Progress_Notes_no_complete %} checked
+                                        {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Individual_Group_Progress_Notes_none %} checked {% endif %}
+                                        disabled></td>
+                                <td class="text-wrap">{{ new_chart.Individual_Group_Progress_Notes_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Individual/Group Attendance Sheet</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Individual_Group_Attendance_Sheet_complete %} checked
+                                        {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Individual_Group_Attendance_Sheet_no_complete %} checked
+                                        {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Individual_Group_Attendance_Sheet_none %} checked {% endif %}
+                                        disabled></td>
+                                <td class="text-wrap">{{ new_chart.Individual_Group_Attendance_Sheet_comment }}</td>
+                            </tr>
+
+
+
+
+
+                            <tr>
+                                <th scope="row" class="bg-secondary border border-dark""><b>Section 4. Medical Information</b></th>
+                                            <td class=" bg-secondary text-center border border-dark"">
+                                    </td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                            <td class=" bg-secondary text-center border border-dark""></td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td scope=" row">HIV Counseling Form</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.HIV_Counseling_Form_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.HIV_Counseling_Form_no_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.HIV_Counseling_Form_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.HIV_Counseling_Form_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">TB Testing Form </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.TB_Testing_Form_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.TB_Testing_Form_no_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.TB_Testing_Form_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.TB_Testing_Form_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Medication (If applicable)</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Medication_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Medication_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Medication_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Medication_comment }}</td>
+                            </tr>
+
+
+
+
+                            <tr>
+                                <th scope="row" class="bg-secondary border border-dark""><b>Section 5. Lab Results</b></th>
+                                            <td class=" bg-secondary text-center border border-dark"">
+                                    </td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                            <td class=" bg-secondary text-center border border-dark""></td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td scope=" row">Urine Drug Screening</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Urine_Drug_Screening_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Urine_Drug_Screening_no_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Urine_Drug_Screening_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Urine_Drug_Screening_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Other</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_complete_5 %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_no_complete_5 %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_none_5 %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Other_comment_5 }}</td>
+                            </tr>
+
+
+
+
+
+
+                            <tr>
+                                <th scope="row" class="bg-secondary border border-dark""><b>Section 6. Correspondents (In/Out)</b></th>
+                                            <td class=" bg-secondary text-center border border-dark"">
+                                    </td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                            <td class=" bg-secondary text-center border border-dark""></td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td scope=" row">Drug Court reports, SAI, IDRC/DUII</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Drug_Court_reports_SAI_IDRC_DUII_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Drug_Court_reports_SAI_IDRC_DUII_no_complete %} checked
+                                        {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Drug_Court_reports_SAI_IDRC_DUII_none %} checked {% endif %}
+                                        disabled></td>
+                                <td class="text-wrap">{{ new_chart.Drug_Court_reports_SAI_IDRC_DUII_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Probation, Parole, ISP, DFSetc...</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Probation_Parole_ISP_DFSetc_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Probation_Parole_ISP_DFSetc_no_complete %} checked {% endif %}
+                                        disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Probation_Parole_ISP_DFSetc_none %} checked {% endif %}
+                                        disabled></td>
+                                <td class="text-wrap">{{ new_chart.Probation_Parole_ISP_DFSetc_comment }}</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <th scope="row" class="bg-secondary border border-dark""><b>Section 7. Administrative Documentation</b></th>
+                                            <td class=" bg-secondary text-center border border-dark"">
+                                    </td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                            <td class=" bg-secondary text-center border border-dark""></td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                            
+                                          </tr>
+                                          <tr>
+                                            <td scope=" row">Audit Forms</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Audit_Forms_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Audit_Forms_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Audit_Forms_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Audit_Forms_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Supervision_Notes_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Supervision_Notes_no_complete %} checked {% endif %} disabled>
+                                </td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Supervision_Notes_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Supervision_Notes_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Other</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_complete_7 %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_no_complete_7 %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_none_7 %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Other_comment_7 }}</td>
+                            </tr>
+
+
+
+                            <tr>
+                                <th scope="row" class="bg-secondary border border-dark""><b>Section 8. Quality Assurance</b></th>
+                                                    <td class=" bg-secondary text-center border border-dark"">
+                                    </td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                                    <td class=" bg-secondary text-center border border-dark""></td>
+                                <td class="bg-secondary text-center border border-dark""></td>
+                                                    
+                                                  </tr>
+                                                  <tr>
+                                                    <td scope=" row">Client Survey (30, 60+90 days)</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Client_Survey_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Client_Survey_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Client_Survey_comment %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Other_comment_7 }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">QA Statistics</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.QA_Statistics_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.QA_Statistics_no_complete %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.QA_Statistics_none %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.QA_Statistics_comment }}</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">Other</td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_complete_8 %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_no_complete_8 %} checked {% endif %} disabled></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"
+                                        {% if new_chart.Other_none_8 %} checked {% endif %} disabled></td>
+                                <td class="text-wrap">{{ new_chart.Other_comment_8 }}</td>
+                            </tr>
+
+
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

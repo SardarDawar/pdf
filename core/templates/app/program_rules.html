@@ -1,0 +1,111 @@
+{% extends 'Base.html' %}
+
+  {% block content %}
+  <div class="container">
+    
+    {% if form.errors %}
+    {% for field in form %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+      There is error in  {{ field.name }} &nbsp;&nbsp;&nbsp; <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+  <form method="POST">
+      {% csrf_token %}
+      <div class="card" style=" width: auto;">
+        <div class="shadow p-3 bg-white rounded">
+
+            <div class="card-header text-center bg-transparent border-0">
+                <h3>
+                    <p>PROGRAM RULES</p>
+
+            </div>
+
+
+
+            <div class="card-body">
+  <p>
+    <br>
+  </p>
+  <p>The following Rules and Regulations are designed for your protection and safety as a client of the <input type="text" name="program_rules">. Any infractions will be addressed on an individual basis. If you have questions regarding this document, please speak with your counselor.</p>
+  <p>
+    <br>
+  </p>
+  <p>Clients are expected to be on time for all sessions including individuals, group didactics therapy and education.&nbsp;</p>
+  <p>
+    <br>
+  </p>
+  <p>No abusive behavior is tolerated, including abusive language, use of profanity, and threats to peers or staff members.</p>
+  <p>
+    <br>
+  </p>
+  <p>No shorts, tank tops, provocative clothing or shirts with messages about alcohol, drugs, tobacco, or any other negative slogans are allowed. No shorts or skirt above the knee. If you are dressed inappropriately, you are subject to being sent home on your own accord.</p>
+  <p>
+    <br>
+  </p>
+  <p>No smoking is allowed in the facility. You must smoke outside the building in the designated area.</p>
+  <p>
+    <br>
+  </p>
+  <p>&nbsp;No client is allowed beyond the stop points posted in the facility unless escorted by your counselor.</p>
+  <p>
+    <br>
+  </p>
+  <p>No gambling or dice, playing is allowed in the facility.</p>
+  <p>
+    <br>
+  </p>
+  <p>Use of radios, compact disc players, or headphones is NOT allowed during program hours.&nbsp;</p>
+  <p>
+    <br>
+  </p>
+  <p>No stealing. Theft can lead to discharge and prosecution.</p>
+  <p>
+    <br>
+  </p>
+  <p>Absolutely NO profanity, swearing is not permitted in the facility.</p>
+  <p>
+    <br>
+  </p>
+  <p>&nbsp;No leaving the facility without informing staff.</p>
+  <p>
+    <br>
+  </p>
+  <p>You must sign in and out at the start of the day and at the end of the day.</p>
+  <p>
+    <br>
+  </p>
+  <p>Miss use and destruction of agency property is not acceptable, you are responsible for any damage to agency property.</p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <p>Client Signature: ___________________________________ Date: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;__________________</p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <p>Witness Signature: ___________________________________ Date: &nbsp; &nbsp; &nbsp; __________________</p>
+  <p>
+    <br>
+  </p>
+  <p>
+    <br>
+  </p>
+  <input type="submit" class="btn btn-primary">
+  <button type="submit" class="btn btn-default"><a href="{% url 'case_note' %}"> Continue</a></button>
+
+  </div></div></div></form></div>
+  {% endblock %}

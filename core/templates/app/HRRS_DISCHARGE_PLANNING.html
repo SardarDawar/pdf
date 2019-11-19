@@ -1,0 +1,216 @@
+{% extends 'Base.html' %}
+{% block content %}
+<div class="container">
+    
+        {% if form.errors %}
+        {% for field in form %}
+        {% for error in field.errors %}
+        <div class="alert alert-danger">
+                There is error in  {{ field.name }} &nbsp;&nbsp;&nbsp; <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        
+        <div class="mx-auto mt-5 mb-5" style="width: 1200px;">
+
+
+                <div class="card" style=" width: auto;">
+                    <div class="shadow p-3 bg-white rounded">
+    
+                        <div class="card-header text-center bg-transparent border-0">
+                            <h3>
+                                    HRRS DISCHARGE PLANNING                            </h3>
+    
+                        </div>
+    
+    
+    
+                        <div class="card-body">
+                               
+                           {{form.as_p}}
+                                <input type="submit" class="btn btn-primary" value="Save">
+                                <button type="submit" class="btn btn-default"><a href="{% url 'home1' %}"> Continue</a></button>
+                                
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+       
+
+    </form>
+</div>
+{% endblock %}
+
+
+<!-- 
+<div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" name="date" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Type of Insurance</label>
+        <input type="text" name="type_of_insurance" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Insurance/Medicaid # </label>
+        <input type="text" name="medicaid_number" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>DOB </label>
+        <input type="text" name="DOB" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>SS#</label>
+        <input type="text" name="ss_number" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Race</label>
+        <input type="text" name="race " maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input type="text" name="address" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Home Telephone</label>
+        <input type="text" name="home_tel" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> Cell Telephone</label>
+        <input type="text" name="cell_tel" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> Emergency Contact</label>
+        <input type="text" name="emergency_contact" maxlength="150" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label> Relationship to ct</label>
+        <input type="text" name="relationship_to_ct" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> Telephone </label>
+        <input type="text" name="telephone_numer" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> Permission to contact</label>
+        <select name="permission_to_contact" class="form-control">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Referral source </label>
+        <input type="text" name="referral_source" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Substance Abuse History </label>
+        <select name="substance_abuse_history" class="form-control">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label> Drug of choice</label>
+        <input type="text" name="drug_of_choice" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> Date last used</label>
+        <input type="text" name="date_last_used" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> Drug Used</label>
+        <input type="text" name="drug_used" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> Amt Used</label>
+        <input type="text" name="amt_used" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label> Treatment history</label>
+        <input type="text" name="treatment_history" maxlength="150" class="form-control">
+    </div>
+    <br><br><br><br><br>
+    <label>Comment:</label>
+    <div class="card">
+        <div class="container">
+            <div class="form-group">
+                <label> Disposition</label>
+                <input type="text" name="Disposition" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label> Recommendation</label>
+                <input type="text" name="Recommendation" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label> client meets criteria for</label>
+                <input type="text" name="client_meets_criteria_for" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label> No Further Services Needed </label>
+                <select name="no_further_services_needed" class="form-control">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Referral(s) To: </label>
+                <input type="text" name="referral_to" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Further_Evaluation</label>
+                <input type="text" name="Further_Evaluation" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Intake_Appointment</label>
+                <input type="text" name="Intake_Appointment" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Intake Appointment counselor</label>
+                <input type="text" name="Intake_Appointment_counselor" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Intake Appointment Apt.kept</label>
+                <select name="Intake_Appointment_apt_kept" class="form-control">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Rescheduled</label>
+                <input type="text" name="Rescheduled" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Rescheduled counselor</label>
+                <input type="text" name="Rescheduled_counselor" maxlength="150" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Rescheduled apt.kept</label>
+                <select name="Rescheduled_apt_kept" class="form-control">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+
+                    </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Counselor_Name</label>
+        <input type="text" name="Counselor_Name" maxlength="150" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Date</label>
+        <input type="text" name="Date" maxlength="150" class="form-control">
+    </div> -->
